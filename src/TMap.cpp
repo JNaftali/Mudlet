@@ -41,7 +41,9 @@
 #include <QFileDialog>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QJsonParseError>
+#include <QJsonValue>
 #include <QPainter>
 #include <QPixmap>
 #include <QProgressDialog>

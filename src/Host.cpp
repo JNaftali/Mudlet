@@ -59,6 +59,9 @@
 #include "SecureStringUtils.h"
 
 #include <chrono>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <QtConcurrentRun>
 #include <QCoreApplication>
 #include <QDialog>

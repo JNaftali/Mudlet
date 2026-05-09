@@ -30,6 +30,8 @@
 
 #include "TMapLabel.h"
 
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QList>
 #include <QMap>
 #include <QPair>

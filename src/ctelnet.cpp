@@ -54,6 +54,7 @@
 
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QJsonValue>
 #include <QMessageBox>
 #include <QNetworkProxy>
 #include <QProgressDialog>

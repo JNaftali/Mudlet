@@ -33,6 +33,7 @@
 
 #include <memory>
 #include <QAudioOutput>
+#include <QJsonObject>
 #include <QMediaPlayer>
 
 using QMediaPlayerPlaybackState = QMediaPlayer::PlaybackState;

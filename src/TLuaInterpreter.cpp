@@ -58,6 +58,9 @@
 
 #include <math.h>
 
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonParseError>
 #include <QtConcurrentRun>
 #include <QCollator>
 #include <QCoreApplication>

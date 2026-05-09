@@ -35,6 +35,8 @@
 #include <QElapsedTimer>
 #include <QHostAddress>
 #include <QHostInfo>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QPointer>
 #include <QStringList>
 #if defined(QT_NO_SSL)

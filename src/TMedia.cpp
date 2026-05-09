@@ -29,6 +29,7 @@
 #include <QFileInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QJsonValue>
 #include <QNetworkDiskCache>
 #include <QRandomGenerator>
 #include <QStandardPaths>

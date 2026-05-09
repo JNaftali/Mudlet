@@ -44,6 +44,7 @@
 #include <QFile>
 #include <QFont>
 #include <QFuture>
+#include <QJsonObject>
 #include <QList>
 #include <QMargins>
 #include <QPointer>

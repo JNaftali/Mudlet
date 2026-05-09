@@ -45,6 +45,8 @@
 #include "MMCP.h"
 
 #include <chrono>
+#include <QJsonDocument>
+#include <QJsonParseError>
 #include <QtConcurrentRun>
 #include <QAccessible>
 #include <QCloseEvent>

@@ -32,6 +32,8 @@
 #include <QChar>
 #include <QColor>
 #include <QDebug>
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QMap>
 #include <QPoint>
 #include <QPointer>
