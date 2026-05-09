@@ -447,7 +447,7 @@ void MMCPClient::slot_displayError(QAbstractSocket::SocketError socketError)
 void MMCPClient::sendMessage(const QString& msg)
 {
     writeData(qsl("%1%2%3")
-                      .arg(static_cast<char>(Message), msg, static_cast<char>(End)));
+                      .arg(QChar(Message), msg, QChar(End)));
 }
 
 
@@ -501,7 +501,7 @@ void MMCPClient::sendRequestConnections()
 void MMCPClient::sendVersion()
 {
     writeData(qsl("%1%2%4")
-                      .arg(static_cast<char>(Version), mudlet::self()->scmVersion, static_cast<char>(End)));
+                      .arg(QChar(Version), mudlet::self()->scmVersion, QChar(End)));
 }
 
 /**
@@ -856,7 +856,7 @@ void MMCPClient::handleIncomingPeekList(const QString& list)
 void MMCPClient::handleIncomingPingRequest(const QString& msg)
 {
     writeData(qsl("%1%2%3")
-                      .arg(static_cast<char>(PingResponse), msg, static_cast<char>(End)));
+                      .arg(QChar(PingResponse), msg, QChar(End)));
 }
 
 /**

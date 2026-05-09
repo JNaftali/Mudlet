@@ -232,7 +232,7 @@ QPair<bool, QString> MMCPServer::chatTo(const QVariant& target, const QString& m
 
     if (pClient) {
         const QString outMsg = qsl("%1%2 chats to you, '%3'\n%4")
-                                       .arg(static_cast<char>(TextPersonal), getChatName(), msg, static_cast<char>(End));
+                                       .arg(QChar(TextPersonal), getChatName(), msg, QChar(End));
         pClient->writeData(outMsg);
 
         using namespace AnsiColors;
@@ -262,7 +262,7 @@ QPair<bool, QString> MMCPServer::chatAll(const QString& msg)
     }
 
     const QString outMsg = qsl("%1\n%2 chats to everybody, '%3'%4")
-                                   .arg(static_cast<char>(TextEveryone), getChatName(), msg, static_cast<char>(End));
+                                   .arg(QChar(TextEveryone), getChatName(), msg, QChar(End));
 
     QListIterator<QPointer<MMCPClient>> it(mPeersList);
     while (it.hasNext()) {
@@ -327,10 +327,10 @@ QPair<bool, QString> MMCPServer::chatGroup(const QString& group, const QString& 
     using namespace AnsiColors;
 
     QString outMsg = qsl("%1%2\n%3%4 chats to the group, '%5'\n%6")
-                            .arg(static_cast<char>(TextGroup))
+                            .arg(QChar(TextGroup))
                             .arg(group, -15)
                             .arg(getChatName(), FBLDRED, message)
-                            .arg(static_cast<char>(End));
+                            .arg(QChar(End));
 
     bool groupNotEmpty = false;
     QListIterator<QPointer<MMCPClient>> it(mPeersList);
@@ -461,7 +461,7 @@ QPair<bool, QString> MMCPServer::chatName(const QString& name)
 
     if (!mPeersList.isEmpty()) {
         const QString outMsg = qsl("%1%2%3")
-                                       .arg(static_cast<char>(NameChange), name, static_cast<char>(End));
+                                       .arg(QChar(NameChange), name, QChar(End));
 
         QListIterator<QPointer<MMCPClient>> it(mPeersList);
         while (it.hasNext()) {
@@ -488,7 +488,7 @@ QPair<bool, QString> MMCPServer::sendSideChannel(const QString& channel, const Q
     }
 
     const QString outMsg = qsl("%1%2,%3%4")
-                                   .arg(static_cast<char>(SideChannel), channel, msg, static_cast<char>(End));
+                                   .arg(QChar(SideChannel), channel, msg, QChar(End));
     QListIterator<QPointer<MMCPClient>> it(mPeersList);
     while (it.hasNext()) {
         MMCPClient* cl = it.next();
@@ -513,7 +513,7 @@ QPair<bool, QString> MMCPServer::sendSideChannel(const QString& channel, const Q
 //         return {false, qsl("no connected clients")};
 //     }
 
-//     const QString outMsg = qsl("%1%2%3").arg(static_cast<char>(TextEveryone), msg, static_cast<char>(End));
+//     const QString outMsg = qsl("%1%2%3").arg(QChar(TextEveryone), msg, QChar(End));
 //     QListIterator<QPointer<MMCPClient>> it(mPeersList);
 //     while (it.hasNext()) {
 //         MMCPClient* cl = it.next();
@@ -569,7 +569,7 @@ QPair<bool, QString> MMCPServer::emoteAll(const QString& msg)
     }
 
     const QString outMsg = qsl("%1%2 %3\n%4")
-                                   .arg(static_cast<char>(TextEveryone), getChatName(), msg, static_cast<char>(End));
+                                   .arg(QChar(TextEveryone), getChatName(), msg, QChar(End));
     QListIterator<QPointer<MMCPClient>> it(mPeersList);
     while (it.hasNext()) {
         MMCPClient* cl = it.next();
@@ -1027,7 +1027,7 @@ void MMCPServer::sendPublicConnections(MMCPClient* pClient)
     /*
     else {
         // Not sure about this, but how else would a peer know that there aren't any connections?
-        pClient->writeData(qsl("%1%2").arg(static_cast<char>(ConnectionList), static_cast<char>(End)));
+        pClient->writeData(qsl("%1%2").arg(QChar(ConnectionList), QChar(End)));
     }
     */
 }
@@ -1067,7 +1067,7 @@ void MMCPServer::sendPublicPeek(MMCPClient* pClient)
 void MMCPServer::sendServedMessage(MMCPClient* pClient, const QString& msg, bool onlyToServed)
 {
     const QString cmdStr = qsl("%1%2%3")
-                                   .arg(static_cast<char>(TextEveryone), msg, static_cast<char>(End));
+                                   .arg(QChar(TextEveryone), msg, QChar(End));
 
     QListIterator<QPointer<MMCPClient>> it(mPeersList);
     while (it.hasNext()) {
